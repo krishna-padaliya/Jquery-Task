@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>green level</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 90%;
+    height: 5000px;
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 5px rgba(1, 17, 17, 0.299),  0 0 25px rgba(176, 211, 255, 0.299), 0 0 50px rgb(225, 255, 255, 0.299), 0 0 100px rgb(225, 255, 255, 0.299) ;
+    background: #fff;
+}
+.header{
+   display: flex;
+   justify-content: space-between;
+}
+.header img{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+ nav {
+    margin-left: 900px;
+    margin-top: -30px;
+    display: none;
+    
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-size: 18px;
+    padding: 7px;
+
+}
+nav ul i{
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+ i{
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 30px;
+    margin-top:20px;
+}
+@media (max-width:720px){
+    nav ul li{
+        display: block;
+    }
+    nav {
+        width: 720px;
+    position: absolute;
+    left: -500px;
+    /* margin-top: -30px; */
+    /* display: none; */
+    
+}
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png.webp" alt="">
+        <i class="ri-menu-line" id="menu"></i>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">generic</a></li>
+            <li><a href="#">elements</a></li>
+            <i class="ri-close-line" id="close"></i>
+        </ul>
+    </nav>
+    <script>
+        $(document).ready(function(){
+            $("#menu").click(function(){
+                $("nav").show(1000);
+            });
+        });
+        $(document).ready(function(){
+            $("#close").click(function(){
+                 $("nav").hide(1000);
+            });
+        });
+    </script>
+</body>
+</html>

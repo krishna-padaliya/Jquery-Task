@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper-slide</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+    *{
+        font-family: "Poppins", sans-serif;
+    }
+ 
+    button{
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: o.5s;
+        font-size: 10px;
+        padding: 10px;
+        font-weight:lighter;
+        letter-spacing: 0.1em;
+        color: #fff;
+        border: 1px solid #fff;
+        margin-left: 20px;
+        background: transparent;
+     }
+     
+     button:hover{
+        letter-spacing: 0.30em;
+        
+     }
+     button::before{
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background:transparent;
+     }
+     button .pan{
+        position: relative;
+        z-index: 1;
+     }
+     button i{
+        position: absolute;
+        inset: 0;
+        display: block;
+     }
+    
+     button i::before{
+        content: "";
+        position: absolute;
+        top: -3.5px;
+        left: 80%;
+        border: 1px solid #fff;
+        width: 10px;
+        height: 5px;
+        transition: 0.5s;
+        background:#27282c;
+        transform: translateX(-50%);
+     }
+     button:hover i::before{
+        width: 20px;
+        left: 20%;
+     }
+     button i::after{
+        content: "";
+        position: absolute;
+        bottom: -3.5px;
+        left: 20%;
+        width: 10px;
+        height: 5px;
+        border: 1px solid #fff;
+        background: #27282c;
+        transition: 0.5s;
+     }
+     button:hover i::after{
+        width: 20px;
+        left: 80%;
+     }
+     
+    
+     /* button-end */
+    
+    
+    
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+    
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      align-items: center;
+      background-image: url(images.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .swiper-slide .header{
+          width: 100%;
+          height: 120px;
+          /* border: 1px solid white; */
+          margin: auto;
+          display: flex;
+          justify-content: space-evenly;
+        position: sticky;
+    }
+    #menu{
+        display: none;
+    }
+    .swiper-slide .header .logo h2{
+        font-family: "Aldrich", sans-serif;
+        color: #fff;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .swiper-slide .header .logo h2 span{
+        color: #dfa667;
+        font-size: 40px;
+    }
+    .swiper-slide .header .navbar nav ul li{
+        list-style: none;
+        display: inline-block;
+        margin-top: 30px;
+    }
+    .swiper-slide .header .navbar nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        padding: 6px;
+        position: relative;
+    }
+    .swiper-slide .header .navbar nav ul li a::before{
+        content: "";
+        background: #dfa667;
+        width: 0%;
+        height: 2px;
+        position: absolute;
+        bottom: -5px;
+        transition: 1s;
+    }
+    .swiper-slide .header .navbar nav ul li a:hover:before{
+        width: 90%;
+    }
+    .swiper-slide .header .hd-txt{
+        margin-top: 15px;
+    }
+    .swiper-slide .header .hd-txt h4{
+        color: gray;
+        font-size: 15px;
+        text-align: center;
+    }
+    .swiper-slide .header .hd-txt span{
+        color: #dfa667;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
+    }
+    .swiper-slide .center-txt{
+            position: absolute;
+            top: 40%;
+            left: 15%;
+           width: 70%;
+           margin: auto;
+    }
+    .swiper-slide .center-txt h1{
+        font-family: Felix Titling;
+        font-weight: lighter;
+        font-size: 50px;
+        text-align: center
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+           
+          <div class="swiper-slide">
+            <div class="header">
+                <div class="logo">
+                    <h2>Staging <span>.</span></h2>
+                </div>
+                <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Project</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <i class="ri-menu-3-line" id="menu"></i>
+                <div class="hd-txt">
+                    <h4>Call us for any questions</h4>
+                    <span>+01 123 456 789</span>
+                </div>
+            </div>
+            <div class="center-txt">
+            <h1>QUALITY IS NOT ONLY OUR STANDARD.</h1>
+            <button><span class="pan">See Project</span><i></i></button>
+        </div>
+    </div>
+
+
+          <div class="swiper-slide"> 
+            <div class="header">
+                <div class="logo">
+                    <h2>Staging <span>.</span></h2>
+                </div>
+                <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Project</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+                <div class="hd-txt">
+                    <h4>Call us for any questions</h4>
+                    <span>+01 123 456 789</span>
+                </div>
+            </div>
+            <div class="center-txt">
+            <h1>QUALITY IS NOT ONLY OUR STANDARD.</h1>
+            <button><span class="pan">See Project</span><i></i></button>
+        </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+   </div>
+      
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</html>
